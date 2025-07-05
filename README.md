@@ -48,7 +48,7 @@ npm or yarn
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/shadowauth.git
+git clone https://github.com/SweetieBirdX/shadowauth.git
 cd shadowauth
 ```
 
