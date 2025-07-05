@@ -279,4 +279,10 @@ export const getROFLVersion = async (isTestnet: boolean = true): Promise<string 
 export type RoflResponse<T = unknown> = {
   data?: T;
   error?: unknown;
+}
+
+export type RoflError = {
+  code: number;
+  message: string;
+  details?: unknown;
 } 

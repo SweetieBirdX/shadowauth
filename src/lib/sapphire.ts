@@ -1,7 +1,7 @@
-import * as sapphire from '@oasisprotocol/sapphire-paratime'
 import { createPublicClient, createWalletClient, http, custom } from 'viem'
 import { sapphireTestnet, sapphireMainnet } from './wagmi'
 import { type WalletClient, type PublicClient } from 'viem'
+import { oasisSapphire } from "viem/chains"
 
 // Sapphire konfigürasyonu
 export const getSapphireConfig = (isTestnet: boolean = true) => {
@@ -98,6 +98,11 @@ export const CONTRACT_ADDRESSES = {
   testnet: '0x0c67D5525A3b1EDDdAfF38c32AA4aE4F8c4dB933', // ✅ Sapphire Testnet'e deploy edildi!
   mainnet: '0x' + '0'.repeat(40)  // Placeholder - mainnet deploy edilince güncellenecek
 } as const
+
+export type SapphireResponse<T = unknown> = {
+  data?: T;
+  error?: unknown;
+};
 
 // Session key oluşturma
 export const generateSessionKey = (): string => {

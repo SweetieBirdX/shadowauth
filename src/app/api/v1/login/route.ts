@@ -3,6 +3,7 @@ import { verifyCloudProof } from "@worldcoin/idkit"
 import { LoginRequest, LoginResponse, ZKProof } from "@/types"
 import { roflRuntime, ROFLVerificationRequest } from "@/lib/rofl"
 import { createSapphireClient, SESSION_KEY_CONTRACT_ABI, CONTRACT_ADDRESSES } from "@/lib/sapphire"
+import { SapphireClient } from "@oasisprotocol/sapphire-paratime"
 
 // World ID Cloud Proof doğrulama - gerçek World ID API'si ile
 async function verifyZKProofWithWorldID(zkProof: any): Promise<{ success: boolean, nullifierHash?: string }> {
@@ -74,16 +75,22 @@ const sessionStorage = new Map<string, {
   nullifierHash: string
 }>()
 
-type RequestBody = {
-  message: string;
-  signature: string;
-  address: string;
-  proof: unknown; // any yerine unknown kullanıyoruz
-}
-
 export async function POST(req: NextRequest) {
+  type RequestBody = {
+    message: string;
+    signature: string;
+    address: string;
+    proof: unknown;
+    appId: string;
+    zkProof: {
+      merkleRoot: string;
+      nullifierHash: string;
+      proof: string[];
+    };
+  }
+
   try {
-    const body: LoginRequest = await req.json()
+    const body = await req.json() as RequestBody;
     
     if (!body.appId || !body.zkProof) {
       return NextResponse.json(
@@ -106,7 +113,7 @@ export async function POST(req: NextRequest) {
     const roflRequest: ROFLVerificationRequest = {
       appId: body.appId,
       nullifierHash: worldIdResult.nullifierHash,
-      merkleRoot: body.zkProof.merkle_root,
+      merkleRoot: body.zkProof.merkleRoot,
       proof: body.zkProof.proof,
       verificationLevel: body.zkProof.verification_level,
       signal: body.zkProof.signal

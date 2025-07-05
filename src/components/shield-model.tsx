@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { useGLTF, PerspectiveCamera, Float } from "@react-three/drei"
+import { PerspectiveCamera, Float } from "@react-three/drei"
 import * as THREE from "three"
 
 function Shield() {

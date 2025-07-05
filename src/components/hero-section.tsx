@@ -9,10 +9,12 @@ import { WorldIDLogin } from "@/components/world-id-login"
 import { toast } from "sonner"
 import { ShieldModel } from "./shield-model"
 import Image from "next/image"
+import { useAccount } from "wagmi"
 
 export function HeroSection() {
   const [sessionKey, setSessionKey] = useState<string | null>(null)
   const [isTestingSession, setIsTestingSession] = useState(false)
+  const { isConnected } = useAccount()
 
   const handleLoginSuccess = (key: string) => {
     setSessionKey(key)

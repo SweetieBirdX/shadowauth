@@ -98,4 +98,12 @@ export interface AppStats {
   dailyLogins: number[];
   weeklyLogins: number[];
   monthlyLogins: number[];
-} 
+}
+
+export type ApiResponse<T = unknown> = {
+  data?: T;
+  error?: {
+    message: string;
+    details?: unknown;
+  };
+}; 

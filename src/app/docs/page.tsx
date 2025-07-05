@@ -35,7 +35,7 @@ export default function DocsPage() {
             <h2 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">Overview</h2>
             <Card className="p-4 sm:p-6 bg-slate-900/50 border-slate-800">
               <p className="text-sm sm:text-base text-slate-300">
-                ShadowAuth works by verifying users' identities with World ID and creating off-chain session keys on ROFL. 
+                ShadowAuth works by verifying users&apos; identities with World ID and creating off-chain session keys on ROFL. 
                 This allows users to log into dApps without sharing their wallet addresses or other sensitive information.
               </p>
             </Card>
