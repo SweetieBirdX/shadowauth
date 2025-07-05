@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ShadowAuth - Gizlilik Odaklı Oturum Yönetimi",
-  description: "Merkeziyetsiz, gizlilik koruyan, iz bırakmayan oturum yönetimi platformu",
+  title: "ShadowAuth - Privacy-Focused Session Management",
+  description: "Decentralized, privacy-preserving, traceless session management platform",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className="dark">
+    <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans antialiased bg-slate-950 text-slate-200`}>
         <Providers>
           <Navbar />
