@@ -57,7 +57,7 @@ export default function Home() {
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-300">
                   <p className="flex-auto">
                     User verifies their identity with World ID and generates a zero-knowledge proof. 
-                    This proof never reveals the user's wallet address.
+                    This proof never reveals the user&apos;s wallet address.
                   </p>
                 </dd>
               </div>
@@ -104,7 +104,7 @@ export default function Home() {
               Features
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate-300">
-              Secure your application with ShadowAuth's advanced features.
+              Secure your application with ShadowAuth&apos;s advanced features.
             </p>
           </div>
           

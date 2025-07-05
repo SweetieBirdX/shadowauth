@@ -41,6 +41,11 @@ const sessionStorage = new Map<string, {
   nullifierHash: string
 }>()
 
+type ErrorResponse = {
+  error: string;
+  details: unknown; // any yerine unknown kullanıyoruz
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { sessionKey, appId } = await req.json()

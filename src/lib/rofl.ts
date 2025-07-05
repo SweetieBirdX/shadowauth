@@ -273,4 +273,10 @@ export const getROFLVersion = async (isTestnet: boolean = true): Promise<string 
     // Sessiz fail
   }
   return null
+}
+
+// any tiplerini unknown veya daha spesifik tiplerle değiştir
+export type RoflResponse<T = unknown> = {
+  data?: T;
+  error?: unknown;
 } 

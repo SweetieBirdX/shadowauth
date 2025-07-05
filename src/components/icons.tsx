@@ -16,7 +16,6 @@ import {
   AlertCircle,
   Info,
   Menu,
-  X,
   ChevronDown,
   ChevronRight,
   ExternalLink,

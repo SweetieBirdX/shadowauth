@@ -74,6 +74,13 @@ const sessionStorage = new Map<string, {
   nullifierHash: string
 }>()
 
+type RequestBody = {
+  message: string;
+  signature: string;
+  address: string;
+  proof: unknown; // any yerine unknown kullanıyoruz
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body: LoginRequest = await req.json()
